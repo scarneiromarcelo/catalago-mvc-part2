@@ -6,6 +6,7 @@ const path = require("path");
 
 const app = express();
 //Variável que está recebendo o express
+const routes = require('./src/routes/routes')
 
 app.set("view engine", "ejs");
 //Fala para o servidor que a view engine (motor que vai renderizar) é o ejs.
@@ -15,7 +16,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded());
 //Cliente envia info do input através de JSON. e URLENCODED recebe
-
+app.use(routes)
 
 
 
