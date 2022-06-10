@@ -24,7 +24,7 @@ const Moto = connection.define(
     },
   },
   {
-    freezeTable: true,
+    freezeTableName: true,
     timestamps: false,
     createdAt: false,
     updateAt: false,
