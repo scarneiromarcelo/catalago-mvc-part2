@@ -1,0 +1,59 @@
+<section class="modal-overlay" id="ovarlay">
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <h3>Atualizar Moto</h3>
+            <a href="/" id="close-modal-put">x</a>
+        </div>
+
+        <div class="modal-body">
+            <form class="form-modal" action="/update/<%= motoPut.id %>" method="post">
+
+                <label for="nome" class="label" value="<%= motoPut.nome %>">Modelo e Ano da motocicleta:</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  class="text-input"
+                  autocomplete="off"
+                  placeholder="Digite o modelo/ano da motocicleta"
+                />
+        
+                <label for="descricao" value="<%= motoPut.descricao %>">Descrição:</label>
+                <input
+                  type="text"
+                  id="descricao"
+                  name="descricao"
+                  class="text-input"
+                  autocomplete="off"
+                  placeholder="Insira a descrição"
+                />
+        
+                <label for="tipo" class="label" value="<%= motoPut.tipo %>">Preço R$:</label>
+                <input
+                  type="text"
+                  id="tipo"
+                  name="tipo"
+                  class="text-input"
+                  autocomplete="off"
+                  placeholder="Digite o ano da motocicleta"
+                />
+        
+                <label for="imagem" class="label" value="<%= motoPut.imagem %>">Link da Imagem</label>
+                <input
+                  type="text"
+                  id="imagem"
+                  name="imagem"
+                  class="text-input"
+                  autocomplete="off"
+                  placeholder="Insira o link da imagem"
+                />
+        
+                <button id="btnCadastrar" type="submit">Atualizar</button>
+              </form>
+
+        </div>
+
+    </div>
+
+    <h1>Olá Modal</h1>
+</section>

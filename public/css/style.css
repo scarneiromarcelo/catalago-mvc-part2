@@ -5,6 +5,7 @@
   padding: 0;
   font-family: "Ubuntu", sans-serif;
   scroll-behavior: smooth;
+  
 }
 
 :root {
@@ -74,7 +75,7 @@ section#cadastro h2 {
 section#cards {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5rem;
+  
   flex-wrap: wrap; /*Joga o item para baixo*/
   width: 100%;
 }
@@ -430,4 +431,90 @@ footer p {
   footer {
     height: 3rem;
   }
+}
+
+.modal-overlay {
+  background-color: #0000003e;
+  width: 100vw;
+  height: 100vh;
+  position:fixed ;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+
+
+}
+
+.modal{
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  background-color: var(--white);
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;  
+}
+
+.modal-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--red);
+  padding: 1rem;
+  color: var(--white);
+}
+
+.modal-header a#close-modal-put {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+.modal-body{
+  padding: .5rem 1rem;
+  flex: 1;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.form-modal{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.form-modal input {
+  width: 100%;
+  padding: .5rem;
+  font-size: .8rem;
+  outline: none;
+  border: solid 2px #ccc;
+}
+
+.form-modal label{
+  color: #999;
+  padding-top: .5rem;
+}
+
+.form-modal button{
+  padding: .6rem;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  background-color: var(--white);
+  border: solid 1px var(--red);
+  cursor: pointer;
+}
+
+.form-modal button:hover {
+  background-color: var(--red);
+  color: var(--white);
 }
