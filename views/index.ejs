@@ -12,7 +12,6 @@
         <h2>Classificados</h2>
 
         <% motos.forEach((moto) => { %>
-        
 
         <div class="card">
           <img src="<%= moto.imagem %>" alt="" />
@@ -27,12 +26,7 @@
       </section>
     </main>
 
-    <% if (motoPut != null) {%>
-      <%- include('./components/modalPut')%>
-    <% } %>
-
-    <%- include('./components/footer')%>
-
-    <script src="/js/script.js"></script>
+    <% if (motoPut != null) {%> <%- include('./components/modalPut')%> <% } %>
+    
   </body>
 </html>

@@ -35,45 +35,50 @@ const getById = async (req, res) => {
   try {
     const method = req.params.method;
     const motos = await Moto.findAll();
-    const moto = await Moto.findByPk(req.params.id)
+    const moto = await Moto.findByPk(req.params.id);
 
-    if (method == 'put'){
+    if (method == "put") {
       res.render("index", {
         motos,
         motoPut: moto,
-        motoDel: null, 
-      })
+        motoDel: null,
+      });
     } else {
       res.render("index", {
         motos,
         motoPut: null,
-        motoDel: moto, 
-    })
-  }
-
-
+        motoDel: moto,
+      });
+    }
   } catch (err) {
     res.status(500).send({ err: err.message });
-    
   }
-}
+};
 
 const update = async (req, res) => {
   try {
     const moto = req.body;
-    await Moto.update(moto, {where: {id: req.params.id}})
-    res.redirect("/")
+    await Moto.update(moto, { where: { id: req.params.id } });
+    res.redirect("/");
   } catch (err) {
     res.status(500).send({ err: err.message });
-    
   }
-}
+};
 
+const remove = async (req, res) => {
+  try {
+    await Moto.destroy({where: {id: req.params.id}});
+    res.redirect("/");
+  } catch (err) {
+    res.status(500).send({ err: err.message });
+  }
+};
 
 module.exports = {
   getAll,
   signup,
   create,
   getById,
-  update
+  update,
+  remove,
 };
