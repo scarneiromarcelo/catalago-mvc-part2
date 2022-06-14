@@ -14,6 +14,12 @@ const Moto = connection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+
+    descricao: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
     tipo: {
       type: Sequelize.STRING,
       AllowNull: false,
@@ -30,5 +36,10 @@ const Moto = connection.define(
     updateAt: false,
   }
 );
+
+const initTable = async () => {
+  await Moto.sync();
+};
+initTable();
 
 module.exports = Moto;

@@ -3,7 +3,7 @@ const Moto = require("../models/Moto");
 const getAll = async (req, res) => {
   try {
     const motos = await Moto.findAll();
-    res.render("index", { motos, motoPut: null, pokemonDel: null });
+    res.render("index", { motos, motoPut: null, motoDel: null });
   } catch (err) {
     res.status(500).send({ err: err.message });
   }
